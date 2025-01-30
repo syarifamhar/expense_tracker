@@ -84,7 +84,7 @@ class MainScreen extends StatelessWidget {
                     blurRadius: 4,
                     spreadRadius: 1,
                     color: Colors.grey.shade300,
-                    offset: Offset(3, 5),
+                    offset: const Offset(3, 5),
                   )
                 ],
               ),
@@ -102,7 +102,7 @@ class MainScreen extends StatelessWidget {
                     height: 20,
                   ),
                   const Text(
-                    " \$ 14,000.00",
+                    " \$ 4,800.00",
                     style: TextStyle(
                         fontSize: 40,
                         color: Colors.white,
@@ -166,7 +166,7 @@ class MainScreen extends StatelessWidget {
                               ),
                               child: const Center(
                                 child: Icon(
-                                  CupertinoIcons.arrow_down,
+                                  CupertinoIcons.arrow_up,
                                   size: 12,
                                   color: Colors.red,
                                 ),
@@ -186,7 +186,7 @@ class MainScreen extends StatelessWidget {
                                       fontWeight: FontWeight.w400),
                                 ),
                                 Text(
-                                  " \$ 1,500.00",
+                                  " \$ 800.00",
                                   style: TextStyle(
                                       fontSize: 14,
                                       color: Colors.white,
@@ -201,6 +201,112 @@ class MainScreen extends StatelessWidget {
                   )
                 ],
               ),
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Transaction",
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: Theme.of(context).colorScheme.onBackground,
+                      fontWeight: FontWeight.bold),
+                ),
+                GestureDetector(
+                  onTap: () {},
+                  child: Text(
+                    "View All",
+                    style: TextStyle(
+                        fontSize: 14,
+                        color: Theme.of(context).colorScheme.outline,
+                        fontWeight: FontWeight.w400),
+                  ),
+                )
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Expanded(
+              child: ListView.builder(
+                  itemCount: 3,
+                  itemBuilder: (context, int i) {
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 16),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  Stack(
+                                    alignment: Alignment.center,
+                                    children: [
+                                      Container(
+                                        width: 50,
+                                        height: 50,
+                                        decoration: BoxDecoration(
+                                          color: Colors.yellow[700],
+                                          shape: BoxShape.circle,
+                                        ),
+                                      ),
+                                      const Icon(
+                                        Icons.food_bank,
+                                        color: Colors.white,
+                                      )
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    width: 12,
+                                  ),
+                                  Text(
+                                    "Food",
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .onBackground,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                children: [
+                                  Text(
+                                    "- \$ 45.00",
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .onBackground,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                  Text(
+                                    "Today",
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .outline,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  }),
             )
           ],
         ),
