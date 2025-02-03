@@ -1,3 +1,5 @@
+import 'package:expense_tracker/screens/stats/chart.dart';
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 class StatScreen extends StatelessWidget {
@@ -11,7 +13,7 @@ class StatScreen extends StatelessWidget {
         child: Column(
           children: [
             const Text(
-              "Transactions Test",
+              "Transactions",
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -23,7 +25,14 @@ class StatScreen extends StatelessWidget {
             Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.width,
-              color: Colors.red,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: const Padding(
+                padding: EdgeInsets.fromLTRB(12, 20, 12, 12),
+                child: MyChart(),
+              ),
             )
           ],
         ),
